@@ -1,0 +1,18 @@
+##配置中心地址
+#spring:
+#  application:
+#    name: user-server  #该配置影响配置中心dataId user-server.yaml
+#  cloud:
+#    nacos:
+#      config:
+#        server-addr: 127.0.0.1:8848
+#        file-extension: yaml    #读取文件类型
+#        namespace: afcb34ff-afe2-4d22-b389-ee10ec61e129
+#        extension-configs[0]:
+#          data-id: port.yaml
+#          refresh: true
+#        extension-configs[1]:
+#          data-id: mybatis.yaml
+#          refresh: true
+#  profiles:
+#    active: dev #  user-server-dev.yaml

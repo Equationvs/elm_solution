@@ -1,0 +1,32 @@
+server:
+  port: 1030
+
+#调用的工程在nacos中服务的名称
+food-server:
+  ribbon:
+    #NFLoadBalancerRuleClassName: com.elm.configuration.NacosWeightedRule
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+    #指定ribbon负载均衡策略所使用的策略类  RandomRule随机
+spring:
+  application:
+    name: business-server
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/elm_db?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+    username: root
+    password: 552816
+#mybatis日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+feign:
+  hystrix:
+    enabled: true    #在feign中开启hystrix熔断机制
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+
