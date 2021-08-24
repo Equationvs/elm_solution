@@ -1,6 +1,5 @@
 package com.elm.entity;
 
-
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.AllArgsConstructor;
@@ -16,7 +15,17 @@ public class Food {
     private String foodName;
     private String foodExplain;
     private String foodImg;
-    private Double foodPrice;
+    private double foodPrice;
     private Long businessId;
-    private String remark;
+    private String remarks;
 }
+
+
+
+
+
+
+
+
+
+

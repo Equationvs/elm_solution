@@ -13,15 +13,17 @@
         <module>user_server_1010</module>
         <module>food_server_1020</module>
         <module>business_server_1030</module>
-        <module>cart_servser_1040</module>
-        <module>deliveryaddress_server_1050</module>
-        <module>orders_server_1060</module>
+        <module>order_server_1060</module>
+        <module>cart_server_1040</module>
+        <module>delivery_address_server_1050</module>
         <module>gateway_server_1400</module>
     </modules>
 
+    <!-- maven项目的source编译在pom文件里的设置 统一JAR包和版本号 -->
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <dependencyManagement>

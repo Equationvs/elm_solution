@@ -1,6 +1,5 @@
 package com.elm.controller;
 
-
 import com.elm.entity.Food;
 import com.elm.result.CommonResult;
 import com.elm.service.FoodService;
@@ -10,21 +9,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin
 @RestController
 @RequestMapping("/FoodController")
 public class FoodController {
-
     @Autowired
     FoodService foodService;
-
-    @GetMapping("/listFoodByBusinessId/{businessId}")
-    public CommonResult<List> listFoodByBusinessId(@PathVariable Long businessId){
-        List<Food> foods = foodService.listFoodByBusinessId(businessId);
-        return new CommonResult<>(200,"success",foods);
-
-    }
-
     @Value("${server.port}")
     private String port;
 
@@ -32,4 +21,22 @@ public class FoodController {
     public String getPort(){
         return this.port;
     }
+
+    @GetMapping("/listFoodByBuinessId/{businessId}")
+    public CommonResult<List<Food>> listFoodByBuinessId(@PathVariable Long businessId){
+        List<Food> foods = foodService.listFoodByBusinessId(businessId);
+        return new CommonResult<List<Food>>(200,"success",foods);
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
+
